@@ -2,6 +2,7 @@ import { cn } from "@/lib/utils"
 import { Link } from "react-router-dom"
 import { Button } from "@/components/ui/button"
 import { SidebarToggle } from "./SidebarToggle"
+import { ModeToggle } from "../theme"
 
 export interface HeaderLink {
     to: string
@@ -56,6 +57,7 @@ export function Header({
             {/* Right: Custom Content */}
             <div className="flex items-center gap-2">
                 {rightContent ?? <Button variant="outline" size="sm">Login</Button>}
+                <ModeToggle />
                 <SidebarToggle className="md:hidden" />
             </div>
         </header>

@@ -13,7 +13,6 @@ function App() {
       <Route path="/todos" element={<TodosPage />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
-
   )
 }
 
