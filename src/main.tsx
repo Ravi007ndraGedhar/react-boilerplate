@@ -7,7 +7,6 @@ import { store } from './store/store.ts'
 import { BrowserRouter } from 'react-router'
 import { Layout } from '@/components/layout'
 import { ThemeProvider } from './components/theme/theme-provider.tsx'
-
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <Provider store={store}>

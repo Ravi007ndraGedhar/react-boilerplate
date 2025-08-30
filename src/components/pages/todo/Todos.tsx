@@ -5,6 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Loader2, Pencil, Trash2, Plus } from 'lucide-react';
+import { toast } from 'sonner';
 
 export function Todos() {
     const dispatch = useAppDispatch();
@@ -21,8 +22,10 @@ export function Todos() {
             if (editingId) {
                 dispatch(updateTodo({ id: editingId, title }));
                 setEditingId(null);
+                toast.success('Todo edited successfully.')
             } else {
                 dispatch(addTodo(title));
+                toast.success('Todo added successfully.')
             }
             setTitle('');
         }

@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button"
 import { Footer } from "./Footer"
 import { Header } from "./Header"
 import { Sidebar } from "./Sidebar"
+import { Toaster } from "@/components/ui/sonner"
 
 type LayoutProps = {
     children: React.ReactNode
@@ -55,6 +56,7 @@ export function Layout({
                     className={`pt-16  flex-1 ${drawerOnly ? '' : `md:ml-[${sidebarWidth}]`}`}
                 >
                     {children}
+                    <Toaster />
                     {footer &&
                         <Footer
                             links={[
@@ -62,6 +64,7 @@ export function Layout({
                                 { to: "/privacy", label: "Privacy" },
                                 { to: "/terms", label: "Terms" },
                             ]}
+                            fixed
                             rightContent={<div className="flex gap-2">🌐 🐦 🔗</div>}
                         />
                     }
